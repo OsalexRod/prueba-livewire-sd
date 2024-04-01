@@ -12,6 +12,7 @@ https://tailwindcomponents.com/component/modal-transition-animation
         <!-- Modal Header -->
         <div class="bg-green-500 text-white px-4 py-2 flex justify-between">
           <h2 class="text-lg font-semibold">Crear Cliente</h2>
+          <button x-on:click="open = false" class="px-5 text-black">x</button>
         </div>
         <!-- Modal Body -->
         <form wire:submit="guardar">

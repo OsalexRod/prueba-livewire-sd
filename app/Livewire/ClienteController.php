@@ -15,9 +15,9 @@ class ClienteController extends Component
     public $cantidaDeItemsPorPagina = 10;
     
     //variables para el form
-    public $nombreCrear;
-    public $ciCrear;
-    public $telefonoCrear;
+    public $nombreCrear = "";
+    public $ciCrear = "";
+    public $telefonoCrear = "";
 
     public function render()
     {
@@ -33,6 +33,6 @@ class ClienteController extends Component
             'ci' => intval($this->ciCrear),
             'telefono' => intval($this->telefonoCrear),
         ]);
-        
+        $this->reset('nombreCrear', 'ciCrear', 'telefonoCrear');
     }
 }
