@@ -14,21 +14,20 @@ https://tailwindcomponents.com/component/modal-transition-animation
           <h2 class="text-lg font-semibold">Crear Cliente</h2>
         </div>
         <!-- Modal Body -->
-        <div class="p-4">
-          <form wire:submit="guardar">
+        <form wire:submit="guardar">
+          <div class="p-4">
             <p class="mb-2 mt-2">Nombre</p>  
-            <input class="w-full rounded-lg" type="text" wire:model="nombre2">
+            <input class="w-full rounded-lg" type="text" wire:model="nombreCrear">
             <p class="mb-2 mt-4">Ci</p>  
-            <input class="w-full rounded-lg" type="text" wire:model="ci">
+            <input class="w-full rounded-lg" type="text" wire:model="ciCrear">
             <p class="mb-2 mt-4">Telefono</p>  
-            <input class="w-full rounded-lg" type="text" wire:model="telefono">
-            <button type="submit">Save</button>
-          </form>
-        </div>
-        <!-- Modal Footer -->
-        <div class="border-t px-4 py-2 flex justify-end">
-          <button x-on:click="open = false" class="px-3 py-1 bg-green-500 text-white  rounded-md w-full sm:w-auto"> Guardar </button>
-        </div>
+            <input class="w-full rounded-lg" type="text" wire:model="telefonoCrear">
+          </div>
+            <!-- Modal Footer -->
+          <div class="border-t px-4 py-2 flex justify-end">
+            <button x-on:click="open = false" type="submit" class="px-3 py-1 bg-green-500 text-white  rounded-md w-full sm:w-auto"> Guardar </button>
+          </div>
+        </form>
       </div>
     </div>
   </div>

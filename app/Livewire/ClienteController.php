@@ -15,9 +15,9 @@ class ClienteController extends Component
     public $cantidaDeItemsPorPagina = 10;
     
     //variables para el form
-    public $nombre2;
-    public $ci;
-    public $telefono;
+    public $nombreCrear;
+    public $ciCrear;
+    public $telefonoCrear;
 
     public function render()
     {
@@ -29,10 +29,10 @@ class ClienteController extends Component
 
     public function guardar() {
         Cliente::create([
-            'nombre' => $this->nombre2,
-            'ci' => intval($this->ci),
-            'telefono' => intval($this->telefono),
+            'nombre' => $this->nombreCrear,
+            'ci' => intval($this->ciCrear),
+            'telefono' => intval($this->telefonoCrear),
         ]);
-        print("guardado!!!");
+        
     }
 }
