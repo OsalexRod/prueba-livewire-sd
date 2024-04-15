@@ -19,8 +19,10 @@ class ClienteController extends Component
     public $ciCrear = "";
     public $telefonoCrear = "";
 
-    //accion para saber el modo
-    
+    //variables para el form editar
+    public $nombreEditar = "";
+    public $ciEditar = "";
+    public $telefonoEditar = "";
 
     public function render()
     {
@@ -30,6 +32,16 @@ class ClienteController extends Component
         ]);
     }
 
+    public function peresoza($id) {
+        if ($id > 0) {
+            //editar
+            $this->editar();
+        } else {
+            //crear
+            $this->guardar();
+        }
+    }
+
     public function guardar() {
         Cliente::create([
             'nombre' => $this->nombreCrear,
@@ -37,5 +49,20 @@ class ClienteController extends Component
             'telefono' => intval($this->telefonoCrear),
         ]);
         $this->reset('nombreCrear', 'ciCrear', 'telefonoCrear');
+    }
+
+    public function cargarDatosParaEditar($id) {
+        $cliente = Cliente::find($id);
+        $this->nombreEditar = $cliente->nombre;
+        $this->ciEditar = $cliente->ci;
+        $this->telefonoEditar = $cliente->telefono;
+    }
+
+    public function editar($id) {
+        $cliente = Cliente::find($id);
+        $cliente->nombre = $this->nombreEditar;
+        $cliente->ci = $this->ciEditar;
+        $cliente->telefono = $this->telefonoEditar;
+        $cliente->save();
     }
 }
