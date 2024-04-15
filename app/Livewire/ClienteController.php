@@ -19,6 +19,9 @@ class ClienteController extends Component
     public $ciCrear = "";
     public $telefonoCrear = "";
 
+    //accion para saber el modo
+    
+
     public function render()
     {
         $vectorDeClientes = Cliente::where("nombre", "like", '%'.$this->nombre.'%')->paginate($this->cantidaDeItemsPorPagina);
