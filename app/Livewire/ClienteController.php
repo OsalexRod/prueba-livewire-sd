@@ -65,4 +65,9 @@ class ClienteController extends Component
         $cliente->telefono = $this->telefonoEditar;
         $cliente->save();
     }
+
+    public function eliminar($id) {
+        $cliente = Cliente::find($id);
+        $cliente->delete();
+    }
 }
